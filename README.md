@@ -9,6 +9,12 @@ python 远程代码注入扫描，暂未添加扫描功能，仅对源代码进�
 + VulnApp 文件夹中的 main.py 为测试 web 应用程序
 + pis.py 为攻击脚本
 
+刚刚和大佬交流了一下扫描思路，突然发现很尴尬的事情
+
+![burpsuite](images/Snipaste_2019-08-24_23-48-25.png)
+
+![burpsuite](images/Snipaste_2019-08-25_00-27-27.png)
+
 # 快速开始
 
 ### 依赖
