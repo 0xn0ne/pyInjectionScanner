@@ -1,0 +1,7 @@
+GET /injection?p1=119&p2=666 HTTP/1.1
+Host: localhost:8080
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3
+Referer: http://localhost:8080/
+Cookie: random=1
+If-None-Match: "8ab5ce45f96a4507bfae2f917e5eaf20f0bcd38a"

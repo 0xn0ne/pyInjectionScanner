@@ -1,5 +1,5 @@
 #!/bin/python3
-
+import random
 from io import StringIO
 
 import sys
@@ -60,7 +60,7 @@ class InjectionHandler(tornado.web.RequestHandler):
         p2 = self.get_argument('p2', '1')
         eval_p2 = ''
         eval_p1 = ''
-        eval_visited = ''
+        eval_rand = ''
         try:
             p1 = eval(p1)
             if p1:
@@ -74,15 +74,15 @@ class InjectionHandler(tornado.web.RequestHandler):
         except Exception:
             pass
         try:
-            visited = eval(self.get_cookie('visited', '1'))
-            if visited:
-                eval_visited = visited + 1
+            rand = eval(self.get_cookie('random', str(random.randint(100000, 999999))))
+            if rand:
+                eval_rand = rand
         except Exception:
             pass
 
         msg = t_io.getvalue()
         sys.stdout = stdout
-        self.set_cookie('Visited', str(eval_visited))
+        self.set_cookie('random', str(eval_rand))
         self.write('''<h1 align="center">Welcome to test!</h1>
 <p align="center">P1 handle: {}</p>
 <p align="center">P2 handle: {}</p>
