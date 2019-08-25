@@ -4,7 +4,7 @@
 
 在最近的渗透测试中发现对某些方面的检测已经越来越疲软，速度太慢了，原项目的操作速度已经无法满足撒网捕鱼的需求，然后有了弄成自动化扫描的想法。
 
-python 远程代码注入扫描，可以根据输入的 url 或 request 文件自动化检测 query、post body、cookie 三个请求头的数据，我对它的设想是，使用一个高效且准确的爬虫引擎（比如 awvs）将 url 爬下来，使用脚本自动化对相关数据进行检测。
+python 远程代码注入扫描，可以根据输入的 url 或 request 文件自动化检测 query、post body、cookie 三个请求头的数据，我对它的设想是，使用一个高效且准确的爬虫引擎（比如 awvs）将 url 爬下来，使用脚本自动化对相关数据进行检测。目前对其能力还不是很满意，还存在一些不足点。
 
 + VulnApp 文件夹中的 main.py 为测试 web 应用程序
 + injection.py 为攻击脚本
@@ -66,3 +66,11 @@ optional arguments:
   -p PATHS [PATHS ...], --paths PATHS [PATHS ...]
                         文件或文件夹路径
 ```
+
+# 其它
+
+### 缺陷
+
++ 读取文件的 url 的情况下只能使用 GET 方法发起请求
++ 读取文件的 url 的情况下未对 Cookie 进行检测
++ 请求附带数据的情况下只能对表单数据（application/x-www-form-urlencoded）进行检测
