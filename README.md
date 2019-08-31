@@ -74,3 +74,4 @@ optional arguments:
 + 读取文件的 url 的情况下只能使用 GET 方法发起请求
 + 读取文件的 url 的情况下未对 Cookie 进行检测
 + 请求附带数据的情况下只能对表单数据（application/x-www-form-urlencoded）进行检测
++ 脆弱点未详细标记
